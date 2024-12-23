@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Solution</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #374151;
+            color: white;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        header .cta {
+            background-color: #22c55e;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Hero section styles */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            background-color: #f3f4f6;
+        }
+
+        .hero img {
+            max-width: 100%;
+            flex: 1 1 40%;
+        }
+
+        .hero .content {
+            flex: 1 1 50%;
+            padding: 20px;
+        }
+
+        .hero .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .content p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .hero .content form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero .content form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .hero .content form button {
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Stats section styles */
+        .stats-section {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .stats-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .stats-section .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stats-section .stats .stat {
+            flex: 1 1 200px;
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stats-section .stats .stat h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Features section styles */
+        .features-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .features-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .features-section .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .features-section .features .feature {
+            flex: 1 1 300px;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+        }
+
+        .features-section .features .feature img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Team section styles */
+        .team-section {
+            padding: 40px;
+            background-color: #f3f4f6;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .team-section .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-section .team .member {
+            flex: 1 1 200px;
+            text-align: center;
+        }
+
+        .team-section .team .member img {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 40px;
+        }
+
+        footer .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            text-align: left;
+        }
+
+        footer .footer-grid .footer-column {
+            flex: 1 1 200px;
+        }
+
+        footer p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero .content {
+                flex: 1 1 100%;
+            }
+
+            .stats-section .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-section .features {
+                flex-direction: column;
+            }
+
+            .team-section .team {
+                flex-direction: column;
+            }
+
+            footer .footer-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero {
+                padding: 20px;
+            }
+
+            .stats-section, .features-section, .team-section {
+                padding: 20px;
+            }
+
+            footer {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero .content h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero .content p {
+                font-size: 0.9rem;
+            }
+
+            .stats-section .stats .stat {
+                padding: 10px;
+            }
+
+            .features-section .features .feature {
+                padding: 10px;
+            }
+
+            .team-section .team .member img {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/Logo.png" alt="">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Pages</a>
+            <a href="#">Agent</a>
+            <a href="#">Blog</a>
+            <a href="#">Subscribe</a>
+        </nav>
+        <a href="#" class="cta">Let's Talk</a>
+    </header>
+
+    <section class="hero">
+        <img src="" alt="Team working together">
+        <div class="content">
+            <h1>Empowering your business with the best solution</h1>
+            <p>We connect your brand & businesses with your target market in the most desirable, refined, and elevated way possible through the digital medium.</p>
+            <form>
+                <input type="email" placeholder="Enter your email address">
+                <button type="submit">Let's Talk</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2>We Connect Your Businesses with Your Target</h2>
+        <div class="stats">
+            <div class="stat">
+                <h3>1,093</h3>
+                <p>Finished Projects</p>
+            </div>
+            <div class="stat">
+                <h3>3,355</h3>
+                <p>Enrolled Projects</p>
+            </div>
+            <div class="stat">
+                <h3>40</h3>
+                <p>Team Workers</p>
+            </div>
+            <div class="stat">
+                <h3>90%</h3>
+                <p>Satisfaction Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <h2>We Have Made Your Care Easy for You</h2>
+        <div class="features">
+            <div class="feature">
+                <img src="https://via.placeholder.com/300" alt="Effective Design">
+                <h3>Effective Website Design</h3>
+                <p>By connecting patients all over the world to the best instructors, we help individuals reach their goals and pursue their dreams.</p>
+            </div>
+            <div class="feature">
+                <img src="https://via.placeholder.com/300" alt="Digital Marketing">
+                <h3>We Give Proven Digital Marketing Strategies for Our Clients</h3>
+                <p>We collaborate with organizations that transform businesses and pursue dreams through creativity and innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <h2>Meet Our Great Creative Teams</h2>
+        <div class="team">
+            <div class="member">
+                <img src="https://via.placeholder.com/150" alt="Amera Amanda">
+                <h3>Amera Amanda</h3>
+                <p>Creative Lead</p>
+            </div>
+            <div class="member">
+                <img src="https://via.placeholder.com/150" alt="Lucas Podolski">
+                <h3>Lucas Podolski</h3>
+                <p>Marketing Specialist</p>
+            </div>
+            <div class="member">
+                <img src="https://via.placeholder.com/150" alt="Lery Marissa Nasution">
+                <h3>Lery Marissa Nasution</h3>
+                <p>Business Consultant</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Our Products</h4>
+                <p>The Support Suite</p>
+                <p>The Sales Suite</p>
+                <p>Guide</p>
+            </div>
+            <div class="footer-column">
+                <h4>Top Features</h4>
+                <p>Ticketing System</p>
+                <p>Knowledge Base</p>
+                <p>Community Forums</p>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <p>Product Support</p>
+                <p>Developer Docs</p>
+                <p>Business Blog</p>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <p>About Us</p>
+                <p>Careers</p>
+                <p>Investors</p>
+            </div>
+        </div>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
